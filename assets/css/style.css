@@ -1,0 +1,59 @@
+* {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: grid;
+}
+
+.imagehere {
+  background-image: url(../images/BlackHair1.jpg);
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.halfwidth {
+  width: 50%;
+  margin: 0em;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.navbar {
+  background-color: black;
+  height: 9em;
+  background-image: url(../images/hacker-virus-loading-computer-hd-wallpaper.jpg);
+}
+
+.container {
+  margin: 0;
+  background-color: white;
+  margin-top: 3em;
+  margin-left: 2em;
+}
+
+.submitbutton {
+  background-color: salmon;
+  height: 6em;
+  width: 8em;
+  text-align: center;
+  margin: auto;
+}
+
+.footer {
+  margin-top: 0em;
+  background-color: black;
+  color: white;
+  height: 1.5em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
