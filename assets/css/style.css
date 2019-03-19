@@ -4,6 +4,8 @@
 
 body {
   background-image: url("../images/BlackHair1.jpg");
+  margin: auto;
+  position: relative;
 }
 
 .fullwidth {
@@ -35,7 +37,8 @@ body {
 
 .container {
   margin: 0;
-  background-color: white;
+  background-color: black;
+  color: grey;
   margin-top: 3em;
   margin-left: 2em;
 }
@@ -53,13 +56,16 @@ body {
 
 .writeup, .wordGuess {
   display: block;
-  margin: 0em;
+  margin: auto;
+  margin-top: 2em;
   padding: 1em;
   background-color:  crimson;
   height: 20em;
+  color: grey;
 }
 .writeup {
   width: 40%;
+
 }
 
 .wordGuess {
