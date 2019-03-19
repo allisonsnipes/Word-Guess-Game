@@ -1,10 +1,9 @@
 * {
   font-family: 'Roboto Condensed', sans-serif;
-  display: grid;
 }
 
-.imagehere {
-  background-image: url(../images/BlackHair1.jpg);
+body {
+  background-image: url("../images/BlackHair1.jpg");
 }
 
 .fullwidth {
@@ -45,6 +44,26 @@
   height: 2em;
   text-align: center;
   margin: auto;
+}
+
+.row {
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.writeup, .wordGuess {
+  display: block;
+  margin: 0em;
+  padding: 1em;
+  background-color:  crimson;
+  height: 20em;
+}
+.writeup {
+  width: 40%;
+}
+
+.wordGuess {
+  width: 50%;
 }
 
 .footer {
