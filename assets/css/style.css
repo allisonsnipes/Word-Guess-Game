@@ -13,7 +13,10 @@
 
 .halfwidth {
   width: 50%;
-  margin: 0em;
+}
+
+.quarterwidth {
+  width: 25%;
 }
 
 .center {
@@ -38,10 +41,8 @@
   margin-left: 2em;
 }
 
-.submitbutton {
-  background-color: salmon;
-  height: 6em;
-  width: 8em;
+#button {
+  height: 2em;
   text-align: center;
   margin: auto;
 }
