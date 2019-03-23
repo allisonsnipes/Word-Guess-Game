@@ -23,7 +23,6 @@ let currentQuestion = 0,
     losses = 0,
     lives = 10,
     counter = 0,
-
     spacesInWord;
 
 //creating the alphaB buttons ul list
@@ -32,21 +31,24 @@ let buttons = function() {
   letters = document.createElement("ul");
 
   for (let i = 0; i < alphaB.length; i++) {
-    lettexrs.id =4r
+    letters.id = "alphaB";
+    list.document.createElement("li");
+    list.id = "letters";
+    list.innerHTML = alphaB[i];
+    check();
+    myButtons.appendChild(letters);
+    letters.appendChild(list);
   }
-}
 
-//DOM display of various words to guess
-function wordsToGuess() {
-  $(".wordsHere").html(`
-    <legend>
-      ${words[currentWord].word}
-    </legend>
-  `);
-}
+//creating the word elements
 
-//get elements
-let showingLives = document.getElementsById("")
+// creating the number lives
+let
+
+//display lives
+let showingLives = document.getElementsById("lives");
+
+}
 
 //function to start game
 function start() {
@@ -68,4 +70,13 @@ function quit() {
     event.preventDefault();
     window.location.href = "https://github.com/allisonsnipes";
   });
+}
+
+//DOM display of various words to guess
+function wordsToGuess() {
+  $(".wordsHere").html(`
+    <legend>
+      ${words[currentWord].word}
+    </legend>
+  `);
 }
