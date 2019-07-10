@@ -1,31 +1,52 @@
 "use strict";
 
-//document ready function
-$(document).ready(function() {
-  $(".showGame").hide(); //hides the game until start
-  $(".wordGuess").hide();
-  $(".writeUp").hide();
-  start(); //starts the game
-  reset(); //resets the game
-  quit(); //exit game on quit
-});
+//words to guess and setting up alphabet
+var wordBank = [
+  "vault7", 
+  "davinchi", 
+  "trojan", 
+  "fatVirus", 
+  "polymorphicVirus", 
+  "macroVirus", 
+  "fileInfector", 
+  "browserHijacker", 
+  "directActionVirus", 
+  "bootSectorVirus"
+];
 
-//starting defining variables and starting points
-let currentQuestion = 0, //current question number
-  score = 0, //begin score @ 0
-  alphaB = [ //creates alphabet
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
-    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-    guesses = [ ], //stored guesses of users
-    guess = 10, //stores guess count limit 10
-    words, //current word
-    wins = 0, //start with 0 wins counter
-    losses = 0, //start 0 losses counter
-    lives = 10, //start with specific #of lives
-    counter = 0, //counter increment
-    spacesInWord; //spaces in actual word
+var alphaB = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-//beginning base of code--- set all elements up with a purpose...
+//starting defining global variables and starting points
+let guesses = [], //stored guesses of users
+  guessNum = 0, //stores guess count limit 10
+  wins = 0, //start with 0 wins counter
+  losses = 0, //start 0 losses counter
+  displayWord = [],
+  wrongGuess = [],
+  hiddenWord = [];
+
+//function to start game when a player presses something
+document.onkeyup = (event) => {
+  event.preventDefault();
+    //takes user's response and saves it to a lower case string
+    let userResp = String.fromCharCode(event.keyCode).toLocaleLowerCase();
+    //checks if the user enters something other than a letter  
+    if (alphaB.indexOf(userResp) === -1) {
+      return 
+    }
+
+    if (guesses.indexOf(userResp))
+}
+
+
+
+function start() {
+  $(".startGame").on("click", function (event) {
+    event.preventDefault();
+    $(".showGame").show();
+    wordsToGuess();
+  });
+}
 
 //creating the alphaB buttons ul list
 let buttons = function() {
@@ -102,16 +123,6 @@ check = function() {
   }
 }
 
-//important button functions
-//function to start game
-function start() {
-  $(".startGame").on("click", function(event) {
-    event.preventDefault();
-   $(".showGame").show();
-    wordsToGuess();
-  });
-}
-
 //function to reset the game
 $(".resetGame").on("click", function(event) {
   $(".showGame").hide();
@@ -124,5 +135,3 @@ function quit() {
     window.location.href = "https://github.com/allisonsnipes";
   });
 }
-
-// ["vault7", "davinchi", "trojan", "fatVirus", "polymorphicVirus", "macroVirus","fileInfector", "browserHijacker", "directActionVirus","bootSectorVirus"]
