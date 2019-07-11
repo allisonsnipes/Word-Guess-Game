@@ -20,6 +20,7 @@ var alphaB = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 // stored guesses of users
 let guesses = [];
+let wrongGC = 0;
 
 // for incrementing number of guesses
 let guessNum = 0;
@@ -29,6 +30,7 @@ let wins = 0;
 
 // start 0 losses counter
 let losses = 0;
+
 
 //empty arrays for guessing words
 let displayWord = [];
@@ -63,6 +65,7 @@ function startGame() {
   guessNum = 7;
   guesses = [];
   wrongGuess = [];
+  wrongGC = 0;
 
   hiddenWord = wordBank[Math.random() * wordBank.length)].toLowerCase();
   displayWord = hiddenWord.split('').map(letter => {
@@ -74,9 +77,29 @@ function startGame() {
   document.getElementById('guesses').innerHTML = wrongGuess.join(' ')
 }
 
+//function to find out if the guesses are correct for each word
+function checkGuesses(userResp) {
+  for (var i = 0; i < displayWord.length; i ++) {
+    if (hiddenWord[i] === userResp) {
+      displayWord[i] === userResp;
+      wrongGuess = false;
+    } else {
+      let wrongGuess = true;
+      wrongGC++;
+    }
+  }
+  return wrongGuess;
+}
+Wins: <p id="wins"></p>
+Losses: <p id="losses"></p>
+Guess Count: <p id="guesses"></p>
+
 // function to start the next round of games
 function wordtoGuess() {
-	// show the user their game stats of guesses
+  // show the user their game stats of guesses
+  docucument.getElementById('guesses').innerHTML = guessNum;
+  document.getElementsByClassName('underscores').innerHTML = displayWord.join(' ');
+
 }
 
 // function to reset the game
